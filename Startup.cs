@@ -43,6 +43,7 @@ namespace FirstCoreWebApplication
                 endpoints.MapGet("/", async context =>
                 {
                     await context.Response.WriteAsync("Hello World!");
+                    await context.Response.WriteAsync(_config["MyCustomKey"]);
                     await context.Response.WriteAsync("Worker Process Name : " + System.Diagnostics.Process.GetCurrentProcess().ProcessName);
                 });
             });
